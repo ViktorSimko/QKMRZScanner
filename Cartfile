@@ -1,0 +1,2 @@
+github "ViktorSimko/QKMRZParser"
+github "SwiftyTesseract/SwiftyTesseract" ~> 3.0

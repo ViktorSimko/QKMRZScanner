@@ -18,7 +18,6 @@
 		12C0055322D562CE0086FDBC /* CVImageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0055222D562CE0086FDBC /* CVImageBuffer.swift */; };
 		12C0055522D5643F0086FDBC /* CIContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0055422D5643F0086FDBC /* CIContext.swift */; };
 		12E298AD22D52A6700A9AFBB /* LuminanceThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */; };
-		5C45248B5974315AC8BE1E35 /* Pods_QKMRZScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F58CF4674449175F89B65B8 /* Pods_QKMRZScanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +35,7 @@
 		12C0055222D562CE0086FDBC /* CVImageBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVImageBuffer.swift; sourceTree = "<group>"; };
 		12C0055422D5643F0086FDBC /* CIContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIContext.swift; sourceTree = "<group>"; };
 		12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminanceThresholdFilter.swift; sourceTree = "<group>"; };
+		28CDF76524B7586400869BE4 /* QKMRZParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QKMRZParser.framework; path = Carthage/Build/iOS/QKMRZParser.framework; sourceTree = "<group>"; };
 		6F58CF4674449175F89B65B8 /* Pods_QKMRZScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QKMRZScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7784BC05891FFB8A38C353 /* Pods-QKMRZScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QKMRZScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-QKMRZScanner/Pods-QKMRZScanner.release.xcconfig"; sourceTree = "<group>"; };
 		F6B140B9A4C7437306FFF880 /* Pods-QKMRZScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QKMRZScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QKMRZScanner/Pods-QKMRZScanner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +47,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				121B535F216FBC72000F7123 /* CoreImage.framework in Frameworks */,
-				5C45248B5974315AC8BE1E35 /* Pods_QKMRZScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +64,7 @@
 		122C5896216D64620001DE90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28CDF76524B7586400869BE4 /* QKMRZParser.framework */,
 				121B5361216FBCED000F7123 /* TesseractOCR.framework */,
 				121B535E216FBC72000F7123 /* CoreImage.framework */,
 				6F58CF4674449175F89B65B8 /* Pods_QKMRZScanner.framework */,
@@ -380,6 +380,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "QKMRZScanner/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -407,6 +411,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "QKMRZScanner/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
