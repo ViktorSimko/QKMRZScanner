@@ -24,7 +24,11 @@ public protocol QKMRZScannerViewDelegate: class {
 @IBDesignable
 public class QKMRZScannerView: UIView {
 
-    fileprivate var type: QKMRZScannerViewType = .ID
+    public var type: QKMRZScannerViewType = .ID {
+        didSet {
+            cutoutView.type = type
+        }
+    }
 
     fileprivate let tesseract = SwiftyTesseract(language: .custom("ocrb"), bundle: Bundle(for: QKMRZScannerView.self), engineMode: .tesseractLstmCombined)
     fileprivate let mrzParser = QKMRZParser(ocrCorrection: true)
@@ -47,12 +51,6 @@ public class QKMRZScannerView: UIView {
     }
     
     // MARK: Initializers
-    public init(type: QKMRZScannerViewType) {
-        self.type = type
-        super.init(frame: .zero)
-        initialize()
-    }
-
     override public init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
