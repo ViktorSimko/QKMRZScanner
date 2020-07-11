@@ -85,7 +85,7 @@ public class QKMRZScannerView: UIView {
         let mrzTextImage = UIImage(cgImage: preprocessImage(cgImage))
         var recognizedString: String?
         
-        tesseract.performOCR(on: mrzTextImage) { recognizedString = $0 }
+        recognizedString = try? tesseract.performOCR(on: mrzTextImage).get()
         
         if let string = recognizedString, let mrzLines = mrzLines(from: string) {
             return mrzParser.parse(mrzLines: mrzLines)
@@ -113,7 +113,7 @@ public class QKMRZScannerView: UIView {
         let imageHeight = CGFloat(cgImage.height)
         let rect = videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: cutoutRect)
         let videoOrientation = videoPreviewLayer.connection!.videoOrientation
-        
+
         if videoOrientation == .portrait || videoOrientation == .portraitUpsideDown {
             return CGRect(x: (rect.minY * imageWidth), y: (rect.minX * imageHeight), width: (rect.height * imageWidth), height: (rect.width * imageHeight))
         }
@@ -252,8 +252,15 @@ extension QKMRZScannerView: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let cgImage = CMSampleBufferGetImageBuffer(sampleBuffer)?.cgImage else {
             return
         }
+
+        var documentImage = self.documentImage(from: cgImage)
+
+        let uiImage = UIImage(cgImage: documentImage)
         
-        let documentImage = self.documentImage(from: cgImage)
+        if let rotatedImage = uiImage.rotate(radians: -Float.pi / 2.0)?.cgImage {
+            documentImage = rotatedImage
+        }
+
         let imageRequestHandler = VNImageRequestHandler(cgImage: documentImage, options: [:])
         
         let detectTextRectangles = VNDetectTextRectanglesRequest { [unowned self] request, error in

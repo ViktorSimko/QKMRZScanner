@@ -17,6 +17,7 @@
 		12C0055322D562CE0086FDBC /* CVImageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0055222D562CE0086FDBC /* CVImageBuffer.swift */; };
 		12C0055522D5643F0086FDBC /* CIContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0055422D5643F0086FDBC /* CIContext.swift */; };
 		12E298AD22D52A6700A9AFBB /* LuminanceThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */; };
+		2803AE8424B8CB5D0069A7FC /* UIImage+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803AE8324B8CB5D0069A7FC /* UIImage+rotate.swift */; };
 		28B08C8724B8A320003E79E7 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 28B08C8624B8A320003E79E7 /* tessdata */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		12C0055222D562CE0086FDBC /* CVImageBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVImageBuffer.swift; sourceTree = "<group>"; };
 		12C0055422D5643F0086FDBC /* CIContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIContext.swift; sourceTree = "<group>"; };
 		12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminanceThresholdFilter.swift; sourceTree = "<group>"; };
+		2803AE8324B8CB5D0069A7FC /* UIImage+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+rotate.swift"; sourceTree = "<group>"; };
 		28B08C8624B8A320003E79E7 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		28CDF76524B7586400869BE4 /* QKMRZParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QKMRZParser.framework; path = Carthage/Build/iOS/QKMRZParser.framework; sourceTree = "<group>"; };
 		6F58CF4674449175F89B65B8 /* Pods_QKMRZScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QKMRZScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				12C0055022D536AC0086FDBC /* CIImage.swift */,
 				12C0055422D5643F0086FDBC /* CIContext.swift */,
 				12C0055222D562CE0086FDBC /* CVImageBuffer.swift */,
+				2803AE8324B8CB5D0069A7FC /* UIImage+rotate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			files = (
 				12C0055322D562CE0086FDBC /* CVImageBuffer.swift in Sources */,
 				12E298AD22D52A6700A9AFBB /* LuminanceThresholdFilter.swift in Sources */,
+				2803AE8424B8CB5D0069A7FC /* UIImage+rotate.swift in Sources */,
 				12C0055122D536AC0086FDBC /* CIImage.swift in Sources */,
 				12C0055522D5643F0086FDBC /* CIContext.swift in Sources */,
 				12832C242167492A00D132D4 /* AVCaptureVideoOrientation.swift in Sources */,
