@@ -7,15 +7,10 @@
 
 import UIKit
 
-enum QKCutoutViewType {
-    case ID
-    case Passport
-}
-
 class QKCutoutView: UIView {
     fileprivate(set) var cutoutRect: CGRect!
     fileprivate(set) var mrzRect: CGRect!
-    var type: QKCutoutViewType = .ID
+    var type: QKMRZScannerViewType = .ID
 
     var mrzHeightRatio: CGFloat {
         if type == .ID {

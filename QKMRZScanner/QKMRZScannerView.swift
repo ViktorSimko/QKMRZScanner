@@ -12,12 +12,20 @@ import QKMRZParser
 import AudioToolbox
 import Vision
 
+public enum QKMRZScannerViewType {
+    case ID
+    case Passport
+}
+
 public protocol QKMRZScannerViewDelegate: class {
     func mrzScannerView(_ mrzScannerView: QKMRZScannerView, didFind scanResult: QKMRZScanResult)
 }
 
 @IBDesignable
 public class QKMRZScannerView: UIView {
+
+    fileprivate var type: QKMRZScannerViewType = .ID
+
     fileprivate let tesseract = SwiftyTesseract(language: .custom("ocrb"), bundle: Bundle(for: QKMRZScannerView.self), engineMode: .tesseractLstmCombined)
     fileprivate let mrzParser = QKMRZParser(ocrCorrection: true)
     fileprivate let captureSession = AVCaptureSession()
@@ -39,6 +47,12 @@ public class QKMRZScannerView: UIView {
     }
     
     // MARK: Initializers
+    public init(type: QKMRZScannerViewType) {
+        self.type = type
+        super.init(frame: .zero)
+        initialize()
+    }
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -164,6 +178,7 @@ public class QKMRZScannerView: UIView {
     
     fileprivate func addCutoutView() {
         cutoutView.translatesAutoresizingMaskIntoConstraints = false
+        cutoutView.type = self.type
         addSubview(cutoutView)
         
         NSLayoutConstraint.activate([
