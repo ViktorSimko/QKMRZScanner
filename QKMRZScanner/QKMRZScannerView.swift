@@ -78,18 +78,33 @@ public class QKMRZScannerView: UIView {
     
     // MARK: Scanning
     public func startScanning() {
+
         guard !captureSession.inputs.isEmpty else {
             return
         }
         
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            self?.captureSession.startRunning()
-            DispatchQueue.main.async { [weak self] in self?.adjustVideoPreviewLayerFrame() }
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 0.2) { [weak self] in
+
+            if let s = self {
+                s.captureSession.startRunning()
+            }
+
+            DispatchQueue.main.async { [weak self] in
+
+                if let s = self {
+                    s.layer.insertSublayer(s.videoPreviewLayer, at: 0)
+                    s.adjustVideoPreviewLayerFrame()
+                }
+
+            }
         }
     }
     
     public func stopScanning() {
-        captureSession.stopRunning()
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.captureSession.stopRunning()
+            self?.videoPreviewLayer.removeFromSuperlayer()
+        }
     }
     
     // MARK: MRZ
@@ -218,7 +233,7 @@ public class QKMRZScannerView: UIView {
             videoPreviewLayer.session = captureSession
             videoPreviewLayer.videoGravity = .resizeAspectFill
             
-            layer.insertSublayer(videoPreviewLayer, at: 0)
+            //layer.insertSublayer(videoPreviewLayer, at: 0)
         }
         else {
             print("Input & Output could not be added to the session")
