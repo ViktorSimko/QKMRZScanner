@@ -49,6 +49,8 @@ public class QKMRZScannerView: UIView {
     fileprivate var interfaceOrientation: UIInterfaceOrientation {
         return UIApplication.shared.statusBarOrientation
     }
+
+    public var onScanningStopped: (() -> ())? = nil
     
     // MARK: Initializers
     override public init(frame: CGRect) {
@@ -104,6 +106,11 @@ public class QKMRZScannerView: UIView {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.captureSession.stopRunning()
             self?.videoPreviewLayer.removeFromSuperlayer()
+        }
+        if let f = onScanningStopped {
+            DispatchQueue.main.sync {
+                f()
+            }
         }
     }
     
