@@ -103,7 +103,7 @@ public class QKMRZScannerView: UIView {
     }
     
     public func stopScanning() {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).sync { [weak self] in
             self?.captureSession.stopRunning()
             self?.videoPreviewLayer.removeFromSuperlayer()
         }
