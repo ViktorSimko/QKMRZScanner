@@ -108,8 +108,12 @@ public class QKMRZScannerView: UIView {
             self?.videoPreviewLayer.removeFromSuperlayer()
         }
         if let f = onScanningStopped {
-            DispatchQueue.main.sync {
+            if Thread.isMainThread {
                 f()
+            } else {
+                DispatchQueue.main.sync {
+                    f()
+                }
             }
         }
     }
