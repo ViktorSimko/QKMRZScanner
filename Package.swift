@@ -15,10 +15,16 @@ let dependencies: [PackageDescription.Package.Dependency] = [
     .package(url: "https://github.com/SwiftyTesseract/SwiftyTesseract.git", .branch("develop"))
 ]
 
+let linkerSettings: [PackageDescription.LinkerSetting] = [
+  .linkedLibrary("z"),
+  .linkedLibrary("c++")
+]
+
 let libraryTarget = PackageDescription.Target.target(
     name: "QKMRZScanner",
     dependencies: ["QKMRZParser", "SwiftyTesseract"],
-    resources: [.copy("Supporting Files/tessdata")]
+    resources: [.copy("Supporting Files/tessdata")],
+    linkerSettings: linkerSettings
 )
 
 let package = Package(
@@ -28,7 +34,7 @@ let package = Package(
         .library(
             name: "QKMRZScanner",
             targets: ["QKMRZScanner"]
-        ),
+        )
     ],
     dependencies: dependencies,
     targets: [libraryTarget]
