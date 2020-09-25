@@ -11,7 +11,7 @@
 import PackageDescription
 
 let dependencies: [PackageDescription.Package.Dependency] = [
-    .package(url: "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/QKMRZParser", branch: "master"),
+    .package(url: "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/QKMRZParser", .branch("master")),
 ]
 
 let libraryTarget = PackageDescription.Target.target(
