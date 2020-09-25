@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,8 +18,26 @@
 		12C0055522D5643F0086FDBC /* CIContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0055422D5643F0086FDBC /* CIContext.swift */; };
 		12E298AD22D52A6700A9AFBB /* LuminanceThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */; };
 		2803AE8424B8CB5D0069A7FC /* UIImage+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803AE8324B8CB5D0069A7FC /* UIImage+rotate.swift */; };
+		28105622251E19D300E6D4EE /* SwiftyTesseract in Frameworks */ = {isa = PBXBuildFile; productRef = 28105621251E19D300E6D4EE /* SwiftyTesseract */; };
+		2815351B251DE0E600453788 /* QKMRZParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CDF76524B7586400869BE4 /* QKMRZParser.framework */; platformFilter = ios; };
+		2815351C251DE0E600453788 /* QKMRZParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28CDF76524B7586400869BE4 /* QKMRZParser.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		28153522251DE5A200453788 /* tmp.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 28153521251DE5A200453788 /* tmp.xcconfig */; };
 		28B08C8724B8A320003E79E7 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 28B08C8624B8A320003E79E7 /* tessdata */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2815351D251DE0E600453788 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2815351C251DE0E600453788 /* QKMRZParser.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		121B535E216FBC72000F7123 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -36,11 +54,13 @@
 		12C0055422D5643F0086FDBC /* CIContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIContext.swift; sourceTree = "<group>"; };
 		12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminanceThresholdFilter.swift; sourceTree = "<group>"; };
 		2803AE8324B8CB5D0069A7FC /* UIImage+rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+rotate.swift"; sourceTree = "<group>"; };
+		2815351F251DE52D00453788 /* carthage-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "carthage-build.sh"; sourceTree = "<group>"; };
+		28153521251DE5A200453788 /* tmp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tmp.xcconfig; sourceTree = "<group>"; };
+		285A167D251E29430057A5A3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2862536A251DEA3500028714 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		28B08C8624B8A320003E79E7 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		28CDF76524B7586400869BE4 /* QKMRZParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QKMRZParser.framework; path = Carthage/Build/iOS/QKMRZParser.framework; sourceTree = "<group>"; };
 		6F58CF4674449175F89B65B8 /* Pods_QKMRZScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QKMRZScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA7784BC05891FFB8A38C353 /* Pods-QKMRZScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QKMRZScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-QKMRZScanner/Pods-QKMRZScanner.release.xcconfig"; sourceTree = "<group>"; };
-		F6B140B9A4C7437306FFF880 /* Pods-QKMRZScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QKMRZScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QKMRZScanner/Pods-QKMRZScanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28105622251E19D300E6D4EE /* SwiftyTesseract in Frameworks */,
 				121B535F216FBC72000F7123 /* CoreImage.framework in Frameworks */,
+				2815351B251DE0E600453788 /* QKMRZParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,10 +91,13 @@
 		1277813421653FB500070E1C = {
 			isa = PBXGroup;
 			children = (
+				285A167D251E29430057A5A3 /* .gitignore */,
+				2862536A251DEA3500028714 /* Cartfile */,
+				28153521251DE5A200453788 /* tmp.xcconfig */,
+				2815351F251DE52D00453788 /* carthage-build.sh */,
 				1277814021653FB500070E1C /* QKMRZScanner */,
 				1277813F21653FB500070E1C /* Products */,
 				122C5896216D64620001DE90 /* Frameworks */,
-				F40B7D920993C9D35378A434 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,15 +144,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F40B7D920993C9D35378A434 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F6B140B9A4C7437306FFF880 /* Pods-QKMRZScanner.debug.xcconfig */,
-				DA7784BC05891FFB8A38C353 /* Pods-QKMRZScanner.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -146,17 +162,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1277814621653FB500070E1C /* Build configuration list for PBXNativeTarget "QKMRZScanner" */;
 			buildPhases = (
-				9143F24341060E1EC9EEDCA9 /* [CP] Check Pods Manifest.lock */,
 				1277813921653FB500070E1C /* Sources */,
 				1277813A21653FB500070E1C /* Frameworks */,
 				1277813B21653FB500070E1C /* Headers */,
 				1277813C21653FB500070E1C /* Resources */,
+				2815351D251DE0E600453788 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = QKMRZScanner;
+			packageProductDependencies = (
+				28105621251E19D300E6D4EE /* SwiftyTesseract */,
+			);
 			productName = QKMRZScanner;
 			productReference = 1277813E21653FB500070E1C /* QKMRZScanner.framework */;
 			productType = "com.apple.product-type.framework";
@@ -185,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 1277813421653FB500070E1C;
+			packageReferences = (
+				281055F4251E00C100E6D4EE /* XCRemoteSwiftPackageReference "SwiftyTesseract" */,
+			);
 			productRefGroup = 1277813F21653FB500070E1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,32 +221,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28153522251DE5A200453788 /* tmp.xcconfig in Resources */,
 				28B08C8724B8A320003E79E7 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9143F24341060E1EC9EEDCA9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-QKMRZScanner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1277813921653FB500070E1C /* Sources */ = {
@@ -356,7 +358,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -365,7 +368,6 @@
 		};
 		1277814721653FB500070E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6B140B9A4C7437306FFF880 /* Pods-QKMRZScanner.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -382,8 +384,12 @@
 				);
 				INFOPLIST_FILE = "QKMRZScanner/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.quko.ios.QKMRZScanner;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -396,7 +402,6 @@
 		};
 		1277814821653FB500070E1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA7784BC05891FFB8A38C353 /* Pods-QKMRZScanner.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -413,8 +418,12 @@
 				);
 				INFOPLIST_FILE = "QKMRZScanner/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.quko.ios.QKMRZScanner;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -446,6 +455,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		281055F4251E00C100E6D4EE /* XCRemoteSwiftPackageReference "SwiftyTesseract" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyTesseract/SwiftyTesseract";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28105621251E19D300E6D4EE /* SwiftyTesseract */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 281055F4251E00C100E6D4EE /* XCRemoteSwiftPackageReference "SwiftyTesseract" */;
+			productName = SwiftyTesseract;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1277813521653FB500070E1C /* Project object */;
 }

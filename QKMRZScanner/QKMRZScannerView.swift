@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import SwiftyTesseract
+import VisionKit
 import QKMRZParser
 import AudioToolbox
 import Vision
@@ -30,7 +31,7 @@ public class QKMRZScannerView: UIView {
         }
     }
 
-    fileprivate let tesseract = SwiftyTesseract(language: .custom("ocrb"), bundle: Bundle(for: QKMRZScannerView.self), engineMode: .tesseractOnly)
+    fileprivate let tesseract = Tesseract(language: .custom("ocrb"), dataSource: Bundle(for: QKMRZScannerView.self), engineMode: .tesseractOnly)
     fileprivate let mrzParser = QKMRZParser(ocrCorrection: true)
     fileprivate let captureSession = AVCaptureSession()
     fileprivate let videoOutput = AVCaptureVideoDataOutput()
