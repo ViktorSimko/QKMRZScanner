@@ -5,7 +5,7 @@
 //  Created by Matej Dorcak on 16/10/2018.
 //
 
-import Foundation
+import UIKit
 import QKMRZParser
 
 public class QKMRZScanResult {
