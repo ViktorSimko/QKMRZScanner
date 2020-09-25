@@ -12,11 +12,12 @@ import PackageDescription
 
 let dependencies: [PackageDescription.Package.Dependency] = [
     .package(url: "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/QKMRZParser", .branch("master")),
+    .package(url: "https://github.com/SwiftyTesseract/SwiftyTesseract.git", .branch("develop"))
 ]
 
 let libraryTarget = PackageDescription.Target.target(
     name: "QKMRZScanner",
-    dependencies: ["QKMRZParser"],
+    dependencies: ["QKMRZParser", "SwiftyTesseract"],
     resources: [.copy("tessdata")]
 )
 
