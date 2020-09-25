@@ -24,13 +24,13 @@ let libraryTarget = PackageDescription.Target.target(
 let package = Package(
     name: "QKMRZScanner",
     platforms: [.iOS(.v11)],
-    dependencies: dependencies,
     products: [
         .library(
             name: "QKMRZScanner",
             targets: ["QKMRZScanner"]
         ),
     ],
+    dependencies: dependencies,
     targets: [libraryTarget]
 )
 
