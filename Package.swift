@@ -23,7 +23,7 @@ let libraryTarget = PackageDescription.Target.target(
 
 let package = Package(
     name: "QKMRZScanner",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "QKMRZScanner",
