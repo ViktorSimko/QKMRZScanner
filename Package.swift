@@ -18,7 +18,7 @@ let dependencies: [PackageDescription.Package.Dependency] = [
 let libraryTarget = PackageDescription.Target.target(
     name: "QKMRZScanner",
     dependencies: ["QKMRZParser", "SwiftyTesseract"],
-    resources: [.copy("SupportingFiles/tessdata")]
+    resources: [.copy("Supporting Files/tessdata")]
 )
 
 let package = Package(
