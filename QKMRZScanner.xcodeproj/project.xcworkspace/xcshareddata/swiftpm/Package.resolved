@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "libtesseract",
-        "repositoryURL": "https://github.com/SwiftyTesseract/libtesseract.git",
+        "repositoryURL": "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/libtesseract",
         "state": {
-          "branch": null,
-          "revision": "d8b5fab45f5dc0b1d34b0ca7bf6620b72426adf1",
-          "version": "0.1.0"
+          "branch": "develop",
+          "revision": "8d5164142e179db5c10bb3f91fd74478a34e340a",
+          "version": null
         }
       },
       {
@@ -21,10 +21,10 @@
       },
       {
         "package": "SwiftyTesseract",
-        "repositoryURL": "https://github.com/SwiftyTesseract/SwiftyTesseract",
+        "repositoryURL": "/Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/SwiftyTesseract",
         "state": {
           "branch": "develop",
-          "revision": "5b3091b189fc58ff1a31078fc944f1c8b6f97e77",
+          "revision": "02210dc35a8e4368f62587188bddba07c7641fea",
           "version": null
         }
       }

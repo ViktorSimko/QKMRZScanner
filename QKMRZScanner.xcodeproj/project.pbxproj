@@ -17,9 +17,9 @@
 		12C0055522D5643F0086FDBC /* CIContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C0055422D5643F0086FDBC /* CIContext.swift */; };
 		12E298AD22D52A6700A9AFBB /* LuminanceThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E298AC22D52A6700A9AFBB /* LuminanceThresholdFilter.swift */; };
 		2803AE8424B8CB5D0069A7FC /* UIImage+rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803AE8324B8CB5D0069A7FC /* UIImage+rotate.swift */; };
-		28105622251E19D300E6D4EE /* SwiftyTesseract in Frameworks */ = {isa = PBXBuildFile; productRef = 28105621251E19D300E6D4EE /* SwiftyTesseract */; };
 		28696319251E380700F5F01A /* QKMRZParser in Frameworks */ = {isa = PBXBuildFile; productRef = 28696318251E380700F5F01A /* QKMRZParser */; };
 		28B08C8724B8A320003E79E7 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 28B08C8624B8A320003E79E7 /* tessdata */; };
+		28E3A3CB251F4B6F00F7A21F /* SwiftyTesseract in Frameworks */ = {isa = PBXBuildFile; productRef = 28E3A3CA251F4B6F00F7A21F /* SwiftyTesseract */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28105622251E19D300E6D4EE /* SwiftyTesseract in Frameworks */,
 				28696319251E380700F5F01A /* QKMRZParser in Frameworks */,
+				28E3A3CB251F4B6F00F7A21F /* SwiftyTesseract in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +143,8 @@
 			);
 			name = QKMRZScanner;
 			packageProductDependencies = (
-				28105621251E19D300E6D4EE /* SwiftyTesseract */,
 				28696318251E380700F5F01A /* QKMRZParser */,
+				28E3A3CA251F4B6F00F7A21F /* SwiftyTesseract */,
 			);
 			productName = QKMRZScanner;
 			productReference = 1277813E21653FB500070E1C /* QKMRZScanner.framework */;
@@ -175,8 +175,8 @@
 			);
 			mainGroup = 1277813421653FB500070E1C;
 			packageReferences = (
-				281055F4251E00C100E6D4EE /* XCRemoteSwiftPackageReference "SwiftyTesseract" */,
 				28696317251E380700F5F01A /* XCRemoteSwiftPackageReference "QKMRZParser" */,
+				28E3A3C9251F4B6F00F7A21F /* XCRemoteSwiftPackageReference "SwiftyTesseract" */,
 			);
 			productRefGroup = 1277813F21653FB500070E1C /* Products */;
 			projectDirPath = "";
@@ -426,14 +426,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		281055F4251E00C100E6D4EE /* XCRemoteSwiftPackageReference "SwiftyTesseract" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyTesseract/SwiftyTesseract";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		28696317251E380700F5F01A /* XCRemoteSwiftPackageReference "QKMRZParser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/QKMRZParser";
@@ -442,18 +434,26 @@
 				kind = branch;
 			};
 		};
+		28E3A3C9251F4B6F00F7A21F /* XCRemoteSwiftPackageReference "SwiftyTesseract" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/SwiftyTesseract";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		28105621251E19D300E6D4EE /* SwiftyTesseract */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 281055F4251E00C100E6D4EE /* XCRemoteSwiftPackageReference "SwiftyTesseract" */;
-			productName = SwiftyTesseract;
-		};
 		28696318251E380700F5F01A /* QKMRZParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 28696317251E380700F5F01A /* XCRemoteSwiftPackageReference "QKMRZParser" */;
 			productName = QKMRZParser;
+		};
+		28E3A3CA251F4B6F00F7A21F /* SwiftyTesseract */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28E3A3C9251F4B6F00F7A21F /* XCRemoteSwiftPackageReference "SwiftyTesseract" */;
+			productName = SwiftyTesseract;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
