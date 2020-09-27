@@ -11,8 +11,8 @@
 import PackageDescription
 
 let dependencies: [PackageDescription.Package.Dependency] = [
-    .package(url: "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/QKMRZParser", .branch("master")),
-    .package(url: "file:///Users/simkoviktor/nlv8/binx/iOS/BINXWithSubmodules/SwiftyTesseract", .branch("develop"))
+    .package(url: "https://github.com/ViktorSimko/QKMRZParser.git", .branch("master")),
+    .package(url: "https://github.com/SwiftyTesseract/SwiftyTesseract.git", .branch("develop"))
 ]
 
 let linkerSettings: [PackageDescription.LinkerSetting] = [
