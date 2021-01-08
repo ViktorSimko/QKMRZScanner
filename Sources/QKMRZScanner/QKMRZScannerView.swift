@@ -25,27 +25,25 @@ public protocol QKMRZScannerViewDelegate: class {
 @IBDesignable
 public class QKMRZScannerView: UIView {
 
-    public var type: QKMRZScannerViewType = .ID {
+    public var type: QKMRZScannerViewType = .ID /*{
         didSet {
             cutoutView.type = type
         }
-    }
+    }*/
 
     fileprivate let tesseract = Tesseract(language: .custom("ocrb"), dataSource: Bundle.module, engineMode: .tesseractOnly)
     fileprivate let mrzParser = QKMRZParser(ocrCorrection: true)
     fileprivate let captureSession = AVCaptureSession()
     fileprivate let videoOutput = AVCaptureVideoDataOutput()
     fileprivate let videoPreviewLayer = AVCaptureVideoPreviewLayer()
-    fileprivate let cutoutView = QKCutoutView()
+    //fileprivate let cutoutView = QKCutoutView()
     fileprivate var isScanningPaused = false
     fileprivate var observer: NSKeyValueObservation?
     @objc public dynamic var isScanning = false
     public var vibrateOnResult = true
     public weak var delegate: QKMRZScannerViewDelegate?
     
-    public var cutoutRect: CGRect {
-        return cutoutView.cutoutRect
-    }
+    public var cutoutRect: CGRect!
     
     fileprivate var interfaceOrientation: UIInterfaceOrientation {
         return UIApplication.shared.statusBarOrientation
@@ -71,7 +69,7 @@ public class QKMRZScannerView: UIView {
     // MARK: Overriden methods
     override public func prepareForInterfaceBuilder() {
         setViewStyle()
-        addCutoutView()
+        //addCutoutView()
     }
     
     override public func layoutSubviews() {
@@ -106,7 +104,7 @@ public class QKMRZScannerView: UIView {
     public func stopScanning() {
         DispatchQueue.global(qos: .userInitiated).sync { [weak self] in
             self?.captureSession.stopRunning()
-            self?.videoPreviewLayer.removeFromSuperlayer()
+            //self?.videoPreviewLayer.removeFromSuperlayer()
         }
         if let f = onScanningStopped {
             if Thread.isMainThread {
@@ -192,7 +190,7 @@ public class QKMRZScannerView: UIView {
     fileprivate func initialize() {
         FilterVendor.registerFilters()
         setViewStyle()
-        addCutoutView()
+        //addCutoutView()
         initCaptureSession()
         addAppObservers()
     }
@@ -200,7 +198,7 @@ public class QKMRZScannerView: UIView {
     fileprivate func setViewStyle() {
         backgroundColor = .black
     }
-    
+    /*
     fileprivate func addCutoutView() {
         cutoutView.translatesAutoresizingMaskIntoConstraints = false
         cutoutView.type = self.type
@@ -213,7 +211,7 @@ public class QKMRZScannerView: UIView {
             cutoutView.rightAnchor.constraint(equalTo: rightAnchor)
         ])
     }
-    
+    */
     fileprivate func initCaptureSession() {
         captureSession.sessionPreset = .hd1920x1080
         
@@ -325,8 +323,8 @@ extension QKMRZScannerView: AVCaptureVideoDataOutputSampleBufferDelegate {
             if let mrzTextImage = documentImage.cropping(to: mrzRegionRect) {
                 if let mrzResult = self.mrz(from: mrzTextImage), mrzResult.allCheckDigitsValid {
                     self.stopScanning()
-                    
                     DispatchQueue.main.async {
+                        
                         let enlargedDocumentImage = self.enlargedDocumentImage(from: cgImage)
                         let scanResult = QKMRZScanResult(mrzResult: mrzResult, documentImage: enlargedDocumentImage)
                         self.delegate?.mrzScannerView(self, didFind: scanResult)
