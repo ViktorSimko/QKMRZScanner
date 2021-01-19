@@ -321,7 +321,7 @@ extension QKMRZScannerView: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
             
             if let mrzTextImage = documentImage.cropping(to: mrzRegionRect) {
-                if let mrzResult = self.mrz(from: mrzTextImage), mrzResult.allCheckDigitsValid {
+                if let mrzResult = self.mrz(from: mrzTextImage), mrzResult.allCheckDigitsValid /* IMPORTANT: , mrzResult.documentType == (type == .ID ? "I" : "P") */ {
                     self.stopScanning()
                     DispatchQueue.main.async {
                         
